@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cervejasdb-deploy
+  labels:
+    app: cervejasdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cervejasdb
+  template:
+    metadata:
+      name: cervejasdb-deploy
+      labels:
+        app: cervejasdb
+    spec:
+      containers:
+        - name: cervejasdb-deploy
+          image: leogloriainfnet/acme-cervejas-db:latest
+          imagePullPolicy: Always
+          env:
+            - name: POSTGRES_PASSWORD
+              value: "123456"
+      restartPolicy: Always
+      
