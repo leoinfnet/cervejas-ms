@@ -20,7 +20,6 @@ spec:
           image: leogloriainfnet/acme-cervejas-db:latest
           imagePullPolicy: Always
           env:
-            - name: POSTGRES_PASSWORD
-              value: "123456"
+            - name:  POSTGRES_PASSWORD
+              value: '123456'
       restartPolicy: Always
-      

@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cervejams-svc
+  name: cervejasms-svc
 spec:
   selector:
     app: cervejasms
-  ports:
-    - protocol: TCP
-      port: 8080
-      nodePort: 30010
   type: NodePort
-  
+  ports:
+    - port: 8080
+      nodePort: 31000
+      protocol: TCP
